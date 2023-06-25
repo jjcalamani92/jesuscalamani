@@ -1,3 +1,5 @@
+'use client'
+import { usePath } from '@/src/hooks/usePath'
 import { Site } from '@/src/interfaces/site'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Link from 'next/link'
@@ -6,6 +8,8 @@ interface Props {
   site: Site
 }
 export function FooterP0({ site }: Props) {
+  const path = usePath()
+  if (path[0] === 'dashboard') return null
   return (
     <footer className="text-gray-600 body-font">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">

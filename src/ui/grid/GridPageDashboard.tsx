@@ -9,7 +9,7 @@ import { CardPage } from '../card/CardPage';
 // import { HeadingDashboard } from '../HeadingDashboard';
 // import { HeadingDashboardOption } from '../HeadingDashboardOptions';
 import { useQueryClient } from '@tanstack/react-query';
-import { useGetPages } from '@/src/hooks/react-query/usePage';
+import { useGetPagesByParentId } from '@/src/hooks/react-query/usePage';
 import { HeadingDashboardOption } from '../HeadingDashboardOptions';
 
 interface Props {
@@ -18,13 +18,8 @@ interface Props {
 }
 
 export function GridPagesDashboard(props: Props) {
-  const { data: pages } = useGetPages('parent', props.pages)
-  // const { data: site } = useGetSiteById( props.site)
+  const { data: pages } = useGetPagesByParentId( props.pages)
   
-  // const queryClient = useQueryClient();
-  // const site = queryClient.getQueryData<Site>([`get-site`])
-  
-  // const pages = queryClient.getQueryData<Page[]>([`get-pages-${type}`, uid])
   
   return (
     <SelectionProvider ids={pages.map(data => data._id.toString()) as string[]}>

@@ -98,7 +98,7 @@ export const useGetPageById = ( page: Page) => {
     initialData: page
   });
 };
-export const useGetPages = (type: string, pages: Page[]) => {
+export const useGetPagesByParentId = ( pages: Page[]) => {
   return useQuery({
     queryKey: [`get-pages`],
     queryFn: () => getPagesByParentId(),

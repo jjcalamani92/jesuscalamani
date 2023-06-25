@@ -2,7 +2,7 @@ import { getSiteById } from '@/src/lib/sites'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { HeaderP1, HeaderP2 } from '@/src/components/portfolio/header'
+import { HeaderP1, HeaderP2, HeaderP10 } from '@/src/components/portfolio/header'
 import { getPagesByParentId } from '@/src/lib/pages'
 import QueryProvider from '@/src/providers/QueryProvider'
 import ThemeNextProvider from '@/src/providers/ThemeNextProvider'
@@ -56,6 +56,9 @@ export default async function RootLayout({
     ),
     HeaderP2: () => (
       <HeaderP2 site={site} pages={pages} />
+    ),
+    HeaderP10: () => (
+      <HeaderP10 site={site} pages={pages} />
     ),
   }
   const componentsFooter = {

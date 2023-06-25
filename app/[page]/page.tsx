@@ -5,6 +5,7 @@ import React from 'react'
 import { getPageBySlug, getPageSeoBySlug, getPagesBySiteId } from '@/src/lib/pages';
 import { ListCategories0 } from '@/src/components/portfolio/grid/categories/ListCategories0';
 import {ListArticles0} from '@/src/components/portfolio/grid/articles/ListArticles0';
+import { Contact0 } from '@/src/components/portfolio/contact/ContactP0';
 interface Props {
   params: {
     page: string
@@ -59,6 +60,9 @@ export default async function Index(props: Props) {
       } 
       {
         page.data?.type === 'blog' && <ListArticles0 page={page} articles={articles}/>
+      }
+      {
+        page.data?.type === 'contact' && <Contact0 />
       }
     </React.Fragment>
   )

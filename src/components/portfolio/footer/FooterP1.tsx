@@ -1,6 +1,10 @@
+'use client'
+import { usePath } from '@/src/hooks/usePath'
 import React from 'react'
 
 export function FooterP1() {
+  const path = usePath()
+  if (path[0] === 'dashboard') return null
   return (
     <footer className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">

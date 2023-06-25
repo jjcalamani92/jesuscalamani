@@ -10,13 +10,16 @@ export const typePagePortfolio = [
   { label:"About Me", value:"about"},
   { label:"Categories", value:"category" },
   { label:"Blogs", value:"blog" },
-  { label:"Contact", value:"contact" }
+  { label:"Contact", value:"contact" },
+  { label:"Projects", value:"project" }
 ]
 
 export const typeCategoryPortfolio = [
-  { label:"Category", value:"category" },
-  { label:"Product", value:"product" },
-  { label:"Blog", value:"blog" },
+  { label:"Categories", value:"category" },
+  { label:"Products", value:"product" },
+  { label:"Blogs", value:"blog" },
+  { label:"Projects", value:"project" }
+  
 ]
 // export const domains = ['.com', '.org', '.net', '.vercel.app']
 // export const type = [

@@ -37,7 +37,7 @@ export const deletePagesByParentId = async (ids: string[]) => {
   `;
 
   const variables = { type: type, ids: ids };
-
+  // console.log('variables', variables)
   const res = await fetch(`${url}/api/graphql`, {
     method: "POST",
     headers: {
