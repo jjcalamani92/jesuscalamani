@@ -19,13 +19,12 @@ import { type, uid } from '@/src/utils';
 
 
 interface Props {
-  type: string
   component: string
   category?: Category;
   layout: Component
 }
 
-export function FormComponentPortfolio({ category, type, component, layout }: Props) {
+export function FormComponentPortfolio({ category, component, layout }: Props) {
   const { data } = useSession()
   const path = usePath();
   const { toggleSlideOversForm } = useUI();
@@ -56,6 +55,9 @@ export function FormComponentPortfolio({ category, type, component, layout }: Pr
         {
           layout.component === '<HomeP1/>' &&
           updateSiteComponent.mutate({type: type, id: uid, component: 'Home', uid: values.uid, content: {
+            h1: values.h1, h2: values.h2, h3: values.h3, p: values.p, c1: values.c1, c2: values.c2
+          }})
+          console.log('first', {type: type, id: uid, component: 'Home', uid: values.uid, content: {
             h1: values.h1, h2: values.h2, h3: values.h3, p: values.p, c1: values.c1, c2: values.c2
           }})
         }
