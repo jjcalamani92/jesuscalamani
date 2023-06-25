@@ -28,7 +28,7 @@ export function FormComponentPortfolio({ category, component, layout }: Props) {
   const { data } = useSession()
   const path = usePath();
   const { toggleSlideOversForm } = useUI();
-  const updateCategory = useUpdateCategory(path[3]);
+  // const updateCategory = useUpdateCategory(path[3]);
   const updateSiteComponent = useUpdateSiteComponent();
 
 
@@ -57,9 +57,12 @@ export function FormComponentPortfolio({ category, component, layout }: Props) {
           updateSiteComponent.mutate({type: type, id: uid, component: 'Home', uid: values.uid, content: {
             h1: values.h1, h2: values.h2, h3: values.h3, p: values.p, c1: values.c1, c2: values.c2
           }})
-          console.log('first', {type: type, id: uid, component: 'Home', uid: values.uid, content: {
-            h1: values.h1, h2: values.h2, h3: values.h3, p: values.p, c1: values.c1, c2: values.c2
-          }})
+          // updateSiteComponentAction({type: type, id: uid, component: 'Home', uid: values.uid, content: {
+          //   h1: values.h1, h2: values.h2, h3: values.h3, p: values.p, c1: values.c1, c2: values.c2
+          // }})
+          // console.log('first', {type: type, id: uid, component: 'Home', uid: values.uid, content: {
+          //   h1: values.h1, h2: values.h2, h3: values.h3, p: values.p, c1: values.c1, c2: values.c2
+          // }})
         }
       }}
       // validationSchema={Yup.object({
@@ -145,7 +148,7 @@ export function FormComponentPortfolio({ category, component, layout }: Props) {
           <div className="group-button-form ">
             <button type="submit" className="btn-primary">
               {
-                updateCategory.isLoading
+                updateSiteComponent.isLoading
                   ? '...Updating'
                   : 'Update'
               }

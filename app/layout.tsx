@@ -8,8 +8,8 @@ import QueryProvider from '@/src/providers/QueryProvider'
 import ThemeNextProvider from '@/src/providers/ThemeNextProvider'
 import { UIProvider } from '@/src/providers/UIProvider'
 import { SessionAuthProvider } from '@/src/providers/SessionProvider'
+import { FooterP0 } from '@/src/components/portfolio/footer'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export async function generateMetadata() {
   const site = await getSiteById()
@@ -55,6 +55,11 @@ export default async function RootLayout({
       <HeaderP2 site={site} pages={pages} />
     ),
   }
+  const componentsFooter = {
+    FooterP0: () => (
+      <FooterP0 site={site} />
+    ),
+  }
   return (
     <html suppressHydrationWarning>
       <body className='bg-cris-fill'>
@@ -72,6 +77,10 @@ export default async function RootLayout({
                 components={componentsHeader}
               />
               {children}
+              <MDXRemote
+                source={site.data.components.footer}
+                components={componentsFooter}
+              />
             </UIProvider>
           </ThemeNextProvider>
         </QueryProvider>

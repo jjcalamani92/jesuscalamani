@@ -12,16 +12,11 @@ import { uid, url, type, v } from "../utils";
 
 export async function getSiteById(): Promise<Site> {
   const res = await fetch(`${url}/api/${v}/${type}/query/sites/${uid}`, {
-    cache: "no-cache",
+    cache :"no-cache"
   });
   return await res.json();
 }
-export async function getSite(type: string): Promise<Site> {
-  const res = await fetch(
-    `${url}/api/${v}/${type}/sites/${uid}?type=${type}`
-  );
-  return res.json();
-}
+
 
 export const updateSite = async (
   typeOperation: string,

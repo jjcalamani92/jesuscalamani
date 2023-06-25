@@ -8,8 +8,6 @@ import { MoonIcon, SunIcon, MagnifyingGlassIcon } from '@heroicons/react/20/soli
 
 import { Page } from '@/src/interfaces/page'
 import { Site } from '@/src/interfaces/site'
-// import { useUI } from '@/src/providers/UIProvider'
-// import { MarkdownHTML } from '../MarkdownPreview'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { usePath } from '@/src/hooks/usePath'
 
@@ -21,7 +19,6 @@ interface Props {
 export function HeaderP2({site, pages}: Props) {
 
   const themes = site?.data?.theme.themes
-
   const lightAndDarkMode = site?.data.theme?.lightAndDarkMode
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
   const { theme, setTheme } = useTheme();

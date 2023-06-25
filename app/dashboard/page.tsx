@@ -1,4 +1,5 @@
 // export const dynamic = 'error';
+// export const revalidate = 60
 
 import { getSiteById } from '@/src/lib/sites'
 import PageHeading from '@/src/ui/PageHeading'

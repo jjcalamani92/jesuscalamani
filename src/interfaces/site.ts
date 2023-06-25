@@ -85,6 +85,7 @@ interface Data {
     cardArticle: string;
     cardProduct: string;
     cardCategory: string;
+    article: string;
   };
   layouts: {
     home: Component;

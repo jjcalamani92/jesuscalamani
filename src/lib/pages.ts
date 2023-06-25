@@ -88,16 +88,29 @@ export const updatePage = async (
   );
   return res.json();
 };
-// export const updateSiteInfo = async (input: UpdateSiteInfo) => {
-//   const res = await fetch(
-//     `${url}/api/${v}/${type}/sites/${uid}?type=info`,
-//     {
-//       method: "PUT",
-//       body: JSON.stringify(input),
-//       headers: {
-//         "Content-type": "application/json",
-//       },
-//     }
-//   );
-//   return res.json();
-// };
+
+export async function getPageBySlug(slug: string): Promise<Page> {
+  const res = await fetch(
+    `${url}/api/${v}/${type}/query/pages/page/${uid}/${slug}`,
+    { next: { revalidate: 60 } }
+  );
+  return res.json();
+}
+
+export async function getPageSeoBySlug(slug: string) {
+  const res = await fetch(
+    `${url}/api/${v}/${type}/query/pages/page/${uid}/${slug}`,
+    // { next: { revalidate: 60 } }
+    {cache: 'no-cache'}
+  );
+  return res.json();
+}
+
+export async function getPagesBySiteId(): Promise<Page[]> {
+  const res = await fetch(
+    `${url}/api/${v}/${type}/query/pages/page/siteId?id=${uid}`,
+    // { next: { revalidate: 60 } }
+    {cache: 'no-cache'}
+  );
+  return res.json();
+}

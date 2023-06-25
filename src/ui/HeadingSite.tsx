@@ -14,10 +14,9 @@ import {
   PaintBrushIcon,
   PencilIcon,
 } from '@heroicons/react/20/solid'
-// import Dropdown from './Dropdown'
 import { Site } from '../interfaces/site'
 import React from 'react';
-import { useGetSite } from '../hooks/react-query/useSite'
+import { useGetSiteById } from '../hooks/react-query/useSite'
 import FormSiteEdit from './forms/FormSiteEdit'
 import { useUI } from '../providers/UIProvider'
 import { SlideOversForm } from './SlideOversForm'
@@ -28,7 +27,7 @@ interface Props {
 }
 
 export default function HeadingSite(props: Props) {
-  const { data: site } = useGetSite(props.site)
+  const { data: site } = useGetSiteById(props.site)
   // console.log('site', site)
   const {
     childrenDashboard: { childrens, setChildrens },

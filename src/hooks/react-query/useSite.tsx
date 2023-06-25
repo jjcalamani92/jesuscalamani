@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Site, UpdateSiteComponent, UpdateSiteIcon, UpdateSiteInfo, UpdateSiteLogo, UpdateSiteTheme } from "@/src/interfaces/site";
-import { getSite, getSiteById, updateSite, updateSiteComponent } from "@/src/lib/sites";
+import { getSiteById, updateSite, updateSiteComponent } from "@/src/lib/sites";
 import { useUI } from "@/src/providers/UIProvider";
 import { SwalMessage, SwalMessageError, SwalMessageTime } from "@/src/utils";
 
@@ -48,7 +48,7 @@ export const useUpdateSiteComponent = () => {
   });
 }
 
-export const useGetSite = (site: Site) => {
+export const useGetSiteById = (site: Site) => {
   return useQuery({
     queryKey: [`get-site`],
     queryFn: () => getSiteById(),

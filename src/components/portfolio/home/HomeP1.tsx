@@ -1,4 +1,6 @@
-import { Component, Home } from '@/src/interfaces/site'
+// 'use clie'
+import { Component, Home, Site } from '@/src/interfaces/site'
+import { useQueryClient } from '@tanstack/react-query';
 import React from 'react'
 
 interface Props {
@@ -6,6 +8,10 @@ interface Props {
 }
 
 export function HomeP1({component: {content: {h1, h2, h3, p,  c1, c2}}}: Props) {
+  
+  // const queryClient = useQueryClient();
+  // const site  = queryClient.getQueryData<Site>(["get-site", ])
+  // console.log('site', site)
   const gradientStyle = {
     backgroundImage: `linear-gradient(to right, ${c2}, ${c1})`,
     WebkitBackgroundClip: "text",
