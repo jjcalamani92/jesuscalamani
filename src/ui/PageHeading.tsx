@@ -35,7 +35,7 @@ export default function PageHeading(props: Props) {
 
   const click = () => {
     toggleSlideOversForm.actions.toggle();
-      setChildrens(<FormComponentPortfolio component={site?.data.layouts.home.component!} type='home'  layout={site?.data.layouts.home!} />);
+      setChildrens(<FormComponentPortfolio component={site?.data.layouts.home.component!}   layout={site?.data.layouts.home!} />);
   }
   return (
     <div className="py-3 lg:flex lg:items-center lg:justify-between ">
