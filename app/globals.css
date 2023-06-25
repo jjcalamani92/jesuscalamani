@@ -2,26 +2,264 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  :root,
+  html[class="red"] {
+    --dark-primary-color: 185, 28, 28;
+    --light-primary-color: 254, 226, 226;
+    --primary-color: 220, 38, 38;
+    --fill-color: 255, 255, 255;
+    --accent-color: 239, 68, 68;
+    --primary-text: 33, 33, 33;
+    --secondary-text: 117, 117, 117;
+    --card-color: 230, 230, 230;
+    --card-muted-color: 205, 205, 205;
+    --divider-color: 189, 189, 189;
+  }
+  html[class="darkRed"] {
+    --dark-primary-color: 185, 28, 28;
+    --light-primary-color: 153, 27, 27;
+    --primary-color: 220, 38, 38;
+    --fill-color: 33, 39, 55;
+    --accent-color: 239, 68, 68;
+    --primary-text: 234, 237, 243;
+    --secondary-text: 245, 248, 255;
+    --card-color: 230, 230, 230;
+    --card-muted-color: 205, 205, 205;
+    --divider-color: 189, 189, 189;
+  }
+    html[class="lime"] {
+    --dark-primary-color: 77, 124, 15;
+    --light-primary-color: 236, 252, 203;
+    --primary-color: 132, 204, 22;
+    --fill-color: 255, 255, 255;
+    --accent-color: 101, 163, 13;
+    --primary-text: 33, 33, 33;
+    --secondary-text: 117, 117, 117;
+    --card-color: 230, 230, 230;
+    --card-muted-color: 205, 205, 205;
+    --divider-color: 189, 189, 189;
+  }
+  html[class="darkLime"] {
+    --dark-primary-color: 77, 124, 15;
+    --light-primary-color: 54, 83, 20;
+    --primary-color:132, 204, 22;
+    --fill-color: 33, 39, 55;
+    --accent-color: 101, 163, 13;
+    --primary-text: 234, 237, 243;
+    --secondary-text: 245, 248, 255;
+    --card-color: 230, 230, 230;
+    --card-muted-color: 205, 205, 205;
+    --divider-color: 189, 189, 189;
+  }
+  /* html[class="red"] {
+    --dark-primary-color: rgb(185, 28, 28);
+    --light-primary-color: rgb(254, 226, 226);
+    --primary-color: rgb(220, 38, 38);
+    --fill-color: rgb(255, 255, 255);
+    --accent-color: rgb(239, 68, 68);
+    --primary-text: rgb(33, 33, 33);
+    --secondary-text: rgb(117, 117, 117);
+    --card-color: rgb(230, 230, 230);
+    --card-muted-color: rgb(205, 205, 205);
+    --divider-color: rgb(189, 189, 189);
+  }
+  html[class="darkRed"] {
+    --dark-primary-color: rgb(185, 28, 28);
+    --light-primary-color: rgb(153, 27, 27);
+    --primary-color: rgb(220, 38, 38);
+    --fill-color: rgb(33, 39, 55);
+    --accent-color: rgb(239, 68, 68);
+    --primary-text: rgb(234, 237, 243);
+    --secondary-text: rgb(245, 248, 255);
+    --card-color: rgb(230, 230, 230);
+    --card-muted-color: rgb(205, 205, 205);
+    --divider-color: rgb(189, 189, 189);
+  } */
+  /* html[class="lime"] {
+    --dark-primary-color: rgb(77, 124, 15);
+    --light-primary-color: rgb(236, 252, 203);
+    --primary-color: rgb(132, 204, 22);
+    --fill-color: rgb(255, 255, 255);
+    --accent-color: rgb(101, 163, 13);
+    --primary-text: rgb(33, 33, 33);
+    --secondary-text: rgb(117, 117, 117);
+    --card-color: rgb(230, 230, 230);
+    --card-muted-color: rgb(205, 205, 205);
+    --divider-color: rgb(189, 189, 189);
+  }
+  html[class="darkLime"] {
+    --dark-primary-color: rgb(77, 124, 15);
+    --light-primary-color: rgb(54, 83, 20);
+    --primary-color:rgb(132, 204, 22);
+    --fill-color: rgb(33, 39, 55);
+    --accent-color: rgb(101, 163, 13);
+    --primary-text: rgb(234, 237, 243);
+    --secondary-text: rgb(245, 248, 255);
+    --card-color: rgb(230, 230, 230);
+    --card-muted-color: rgb(205, 205, 205);
+    --divider-color: rgb(189, 189, 189);
+  } */
+  html[class="orange"] {
+    --dark-primary-color: 194, 65, 12;
+    --light-primary-color: 255, 237, 213;
+    --primary-color: 234, 88, 12;
+    --fill-color: 255, 255, 255;
+    --accent-color: 249, 115, 22;
+    --primary-text: 33, 33, 33;
+    --secondary-text: 117, 117, 117;
+    --card-color: 230, 230, 230;
+    --card-muted-color: 205, 205, 205;
+    --divider-color: 189, 189, 189;
+  }
+  html[class="darkOrange"] {
+    --dark-primary-color: 255, 237, 213;
+    --light-primary-color: 194, 65, 12;
+    --primary-color: 234, 88, 12;
+    --fill-color: 33, 39, 55;
+    --accent-color: 249, 115, 22;
+    --primary-text: 234, 237, 243;
+    --secondary-text: 199, 197, 211;
+    --card-color: 52, 63, 96;
+    --card-muted-color: 138, 51, 2;
+    --divider-color: 189, 189, 189;
+  }
+  html[class="pink"] {
+    --dark-primary-color: 190, 24, 93;
+    --light-primary-color: 252, 231, 243;
+    --primary-color: 219, 39, 119;
+    --fill-color: 255, 255, 255;
+    --accent-color: 236, 72, 153;
+    --primary-text: 33, 33, 33;
+    --secondary-text: 117, 117, 117;
+    --card-color: 230, 230, 230;
+    --card-muted-color: 205, 205, 205;
+    --divider-color: 189, 189, 189;
+  }
+  html[class="darkPink"] {
+    --dark-primary-color: 252, 231, 243;
+    --light-primary-color: 190, 24, 93;
+    --primary-color: 219, 39, 119;
+    --fill-color: 33, 39, 55;
+    --accent-color: 236, 72, 153;
+    --primary-text: 234, 237, 243;
+    --secondary-text: 199, 197, 211;
+    --card-color: 52, 63, 96;
+    --card-muted-color: 138, 51, 2;
+    --divider-color: 189, 189, 189;
+  }
+  body {
+    @apply min-h-screen text-cris-base 
+    selection:bg-cris-accent selection:bg-opacity-70 selection:text-cris-inverted;
   }
 }
+@layer components {
+  .warning  {
+    @apply bg-slate-100;
+  }
+  .info {
+    @apply bg-blue-200;
+  }
+  .display-none {
+    @apply hidden;
+  }
+  .focus-outline {
+    @apply outline-2 outline-offset-1  focus-visible:no-underline focus-visible:outline-dashed;
+  }
+  .btn-primary {
+    @apply inline-flex items-center rounded-md border text-gray-100 border-transparent  bg-cris-accent px-4 py-2 text-sm font-medium  shadow-sm hover:bg-cris-primary focus:outline-none focus:ring-2 focus:ring-cris-light focus:ring-offset-2 transition duration-500;
+  }
+  .btn-default {
+    @apply inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-500 space-x-2;
+  }
+  .label-form {
+    @apply block text-sm font-medium text-gray-700;
+  }
+  .input-form {
+    @apply mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm lg:text-base;
+  }
+  .group-button-form {
+    @apply bg-gray-200 flex flex-row-reverse px-3 py-4 gap-3 items-end;
+  }
+  .grid-sites {
+    @apply grid grid-cols-2 gap-3 sm:gap-6  sm:grid-cols-4  lg:grid-cols-5 xl:grid-cols-6 py-6 sm:pt-10;
+  }
+  .card-dashboard {
+    @apply relative max-w-xs rounded-md shadow hover:shadow-2xl transition-all z-0  delay-150  bg-gray-100 text-gray-800;
+  }
+  .card-dashboard-input {
+    @apply h-5 w-5 rounded border-gray-400 text-indigo-600 focus:ring-indigo-500 absolute  top-2 left-2 z-10 opacity-0 group-hover:opacity-100 transition ease-in-out delay-150;
+  }
+   /* .prose :is(:where(code):not(:where([class~="not-prose"] *))) {
+    @apply text-skin-base
+  } */
+  .custom-html-style code, .custom-html-style pre {
+    overflow-x: hidden !important;
+  }
+  .custom-html-style pre {
+   padding: 0 !important;
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* .w-md-editor-text-pre > code,
+  .w-md-editor-text-input {
+    font-size: 23px !important;
+    line-height: 24px !important;
+  }
+  */
+  .custom-html-style p{
+    font-size: 23px !important;
+    line-height: 24px !important;
+
+  } 
+}
+
+
+.swiper-slide img {
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  object-fit: cover;
+}
+.swiper {
+  width: auto;
+  height: auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+}
+
+.colored-toast.swal2-icon-success {
+  background-color: #a5dc86 !important;
+}
+
+.colored-toast.swal2-icon-error {
+  background-color: #f27474 !important;
+}
+
+.colored-toast.swal2-icon-warning {
+  background-color: #f8bb86 !important;
+}
+
+.colored-toast.swal2-icon-info {
+  background-color: #3fc3ee !important;
+}
+
+.colored-toast.swal2-icon-question {
+  background-color: #87adbd !important;
+}
+
+.colored-toast .swal2-title {
+  color: white;
+}
+
+.colored-toast .swal2-close {
+  color: white;
+}
+
+.colored-toast .swal2-html-container {
+  color: white;
 }

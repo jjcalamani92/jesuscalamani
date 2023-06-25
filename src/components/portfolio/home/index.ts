@@ -1,0 +1,1 @@
+export { HomeP1 } from './HomeP1'
