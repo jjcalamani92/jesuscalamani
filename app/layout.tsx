@@ -2,7 +2,7 @@ import { getSiteById } from '@/src/lib/sites'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { HeaderP2 } from '@/src/components/portfolio/header'
+import { HeaderP1, HeaderP2 } from '@/src/components/portfolio/header'
 import { getPagesByParentId } from '@/src/lib/pages'
 import QueryProvider from '@/src/providers/QueryProvider'
 import ThemeNextProvider from '@/src/providers/ThemeNextProvider'
@@ -51,6 +51,9 @@ export default async function RootLayout({
   const pages = await getPagesByParentId()
 
   const componentsHeader = {
+    HeaderP1: () => (
+      <HeaderP1 site={site} pages={pages} />
+    ),
     HeaderP2: () => (
       <HeaderP2 site={site} pages={pages} />
     ),
@@ -64,14 +67,9 @@ export default async function RootLayout({
     <html suppressHydrationWarning>
       <body className='bg-cris-fill'>
       <SessionAuthProvider>
-
         <QueryProvider >
-
           <ThemeNextProvider site={site} >
-
             <UIProvider>
-
-
               <MDXRemote
                 source={site.data.components.header}
                 components={componentsHeader}

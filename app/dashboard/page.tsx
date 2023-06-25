@@ -19,7 +19,7 @@ export default async function Index() {
   }
   return (
     <React.Fragment>
-      <header className="bg-white shadow ">
+      <header className="bg-cris-fill  shadow ">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <HeadingSite site={site} title={site.data.info.name} />
         </div>
