@@ -11,7 +11,7 @@ export function Projects0  () {
   return (
     <>
       <section className="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
-        <div className="container">
+        <div className="container px-6 py-10 mx-auto">
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4">
               <div className="mx-auto mb-[60px] max-w-[510px] text-center">
