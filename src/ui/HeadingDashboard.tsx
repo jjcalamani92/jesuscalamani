@@ -104,10 +104,7 @@ export function HeadingDashboard(props: Props) {
     // setChildrens(<FormContent article={article} />)
   });
   const handleClickEdit = (slug: string) => {
-    // if (path.length === 1 && sortOptionsSite.map(data => data.slug).includes(slug)) {
-    //   toggleSlideOversForm.actions.toggle();
-    //   setChildrens(<FormSiteEdit type={slug} site={site} />);
-    // }
+    
     if (path.length === 3 && sortOptionsPage.map(data => data.slug).includes(slug)) {
       toggleSlideOversForm.actions.toggle();
       setChildrens(<FormPageEdit page={page} type={slug} />);
@@ -121,16 +118,6 @@ export function HeadingDashboard(props: Props) {
       toggleSlideOversForm.actions.toggle();
       setChildrens(<FormArticleEdit article={article} type={slug} />);
     }
-    // if (product && sortOptionsProduct.filter(data => data.slug !== 'technical-specifications').map(data => data.slug).includes(slug)) {
-    //   toggleSlideOversForm.actions.toggle();
-    //   setChildrens(<FormProductEdit product={product} type={slug} />);
-    // }
-
-
-    // if (path[2] === 'articles' && slug === 'image') {
-    //   toggleModal.actions.toggle()
-    // }
-
   }
   const handleClickAdds = () => {
     toggleSlideOversForm.actions.toggle();
@@ -171,7 +158,7 @@ export function HeadingDashboard(props: Props) {
     }
     if (article) {
       updateArticle.mutate({ type: 'content', input: { content: contentArticle.content as string, uid: data?.user.sid } })
-      console.log('content', { type: 'content', input: { content: contentArticle.content as string, uid: data?.user.sid } })
+      // console.log('content', { type: 'content', input: { content: contentArticle.content as string, uid: data?.user.sid } })
     }
 
   };

@@ -10,6 +10,8 @@ import ThemeNextProvider from '@/src/providers/ThemeNextProvider'
 import { UIProvider } from '@/src/providers/UIProvider'
 import { SessionAuthProvider } from '@/src/providers/SessionProvider'
 import { FooterP0 } from '@/src/components/portfolio/footer'
+import GetHeader from '@/src/components/GetHeader';
+import GetFooter from '@/src/components/GetFooter';
 
 
 export async function generateMetadata() {
@@ -51,22 +53,22 @@ export default async function RootLayout({
   const site = await getSiteById()
   const pages = await getPagesByParentId()
 
-  const componentsHeader = {
-    HeaderP1: () => (
-      <HeaderP1 site={site} pages={pages} />
-    ),
-    HeaderP2: () => (
-      <HeaderP2 site={site} pages={pages} />
-    ),
-    HeaderP10: () => (
-      <HeaderP10 site={site} pages={pages} />
-    ),
-  }
-  const componentsFooter = {
-    FooterP0: () => (
-      <FooterP0 site={site} />
-    ),
-  }
+  // const componentsHeader = {
+  //   HeaderP1: () => (
+  //     <HeaderP1 site={site} pages={pages} />
+  //   ),
+  //   HeaderP2: () => (
+  //     <HeaderP2 site={site} pages={pages} />
+  //   ),
+  //   HeaderP10: () => (
+  //     <HeaderP10 site={site} pages={pages} />
+  //   ),
+  // }
+  // const componentsFooter = {
+  //   FooterP0: () => (
+  //     <FooterP0 site={site} />
+  //   ),
+  // }
   return (
     <html suppressHydrationWarning>
       <body className='bg-cris-fill'>
@@ -74,15 +76,18 @@ export default async function RootLayout({
         <QueryProvider >
           <ThemeNextProvider site={site} >
             <UIProvider>
-              <MDXRemote
+              <GetHeader  site={site} pages={pages}/>
+              {/* <MDXRemote
                 source={site.data.components.header}
                 components={componentsHeader}
-              />
+              /> */}
               {children}
-              <MDXRemote
+              <GetFooter  site={site} pages={pages}/>
+
+              {/* <MDXRemote
                 source={site.data.components.footer}
                 components={componentsFooter}
-              />
+              /> */}
             </UIProvider>
           </ThemeNextProvider>
         </QueryProvider>
