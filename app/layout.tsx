@@ -1,6 +1,7 @@
 import { getSiteById } from '@/src/lib/sites'
-import './globals.css'
-import { Inter } from 'next/font/google'
+import '@/src/styles/editorlite.css'
+import '@/src/styles/globals.css'
+import '@/src/styles/katex.css';
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { HeaderP1, HeaderP2, HeaderP10 } from '@/src/components/portfolio/header'
 import { getPagesByParentId } from '@/src/lib/pages'
