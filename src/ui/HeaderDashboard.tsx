@@ -2,8 +2,8 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-// import { useSession } from 'next-auth/react'
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
 
 const user = {
   name: 'Tom Cook',
@@ -29,7 +29,7 @@ function classNames(...classes:string[]) {
 }
 
 export function HeaderDashboard() {
-  // const { data } = useSession()
+  const { data } = useSession()
   // console.log('data', data)
   return (
     <>
@@ -90,7 +90,7 @@ export function HeaderDashboard() {
                         <div>
                           <Menu.Button className="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span className="sr-only">Open user menu</span>
-                            {/* <img className="h-8 w-8 rounded-full" src={data?.user.image} alt="" /> */}
+                            <img className="h-8 w-8 rounded-full" src={data?.user.image} alt="" />
                           </Menu.Button>
                         </div>
                         <Transition
@@ -157,7 +157,7 @@ export function HeaderDashboard() {
                 <div className="border-t border-gray-700 pb-3 pt-4">
                   <div className="flex items-center px-5">
                     <div className="flex-shrink-0">
-                      {/* <img className="h-10 w-10 rounded-full" src={data?.user.image} alt="" /> */}
+                      <img className="h-10 w-10 rounded-full" src={data?.user.image} alt="" />
                     </div>
                     <div className="ml-3">
                       <div className="text-base font-medium leading-none text-white">{user.name}</div>
