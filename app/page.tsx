@@ -1,4 +1,4 @@
-export const dynamic  = "force-dynamic"
+// export const dynamic  = "force-dynamic"
 import { HomeP1 } from '@/src/components/portfolio/home'
 import { getSiteById } from '@/src/lib/sites'
 import { MDXRemote } from 'next-mdx-remote/rsc'

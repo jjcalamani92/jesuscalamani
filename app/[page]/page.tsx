@@ -1,13 +1,14 @@
 
+import React from 'react'
 import { getArticlesByParentId } from '@/src/lib/articles'
 import { getCategoriesByParentId } from '@/src/lib/categories'
-import React from 'react'
 import { getPageBySlug, getPageSeoBySlug, getPagesBySiteId } from '@/src/lib/pages';
 import { ListCategories0 } from '@/src/components/portfolio/grid/categories/ListCategories0';
 import {ListArticles0} from '@/src/components/portfolio/grid/articles/ListArticles0';
 import { Contact0 } from '@/src/components/portfolio/contact/ContactP0';
 import { Projects0 } from '@/src/components/portfolio/projects/Projects0';
 import { AboutP0 } from '@/src/components/portfolio/about';
+
 interface Props {
   params: {
     page: string

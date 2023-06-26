@@ -2,21 +2,18 @@
 import { Actions } from 'ahooks/lib/useToggle';
 import React, { useState, ReactNode, useContext } from 'react';
 import { useToggle } from 'ahooks';
-import { Product } from '../interfaces/product';
 
 interface Toggle {
   value: boolean;
   actions: Actions<boolean>;
 }
-
-interface ProductView {
-  product: Product;
-  setProduct: (data: Product) => void;
-}
-
 interface Children {
   childrens: ReactNode;
   setChildrens: (data: ReactNode) => void;
+}
+interface Content {
+  content: string;
+  setContent: (data: string) => void;
 }
 
 type UIContextProps = {
@@ -27,9 +24,8 @@ type UIContextProps = {
   toggleSlideOversForm: Toggle;
   toggleSlideOversFormArticle: Toggle;
   toggleSlideOversFormComponent: Toggle;
-  toggleProductQuickviews: Toggle;
   childrenDashboard: Children;
-  productView: ProductView;
+  contentArticle: Content
 };
 
 export const UIContext = React.createContext<UIContextProps>(
@@ -48,9 +44,8 @@ export const UIProvider = ({ children }: UIProvider) => {
   const [valueSlideOversForm, actionsSlideOversForm] = useToggle();
   const [valueSlideOversArticle, actionsSlideOversArticle] = useToggle();
   const [valueSlideOversComponent, actionsSlideOversComponent] = useToggle();
-  const [valueProductQuickviews, actionsProductQuickviews] = useToggle();
   const [childrens, setChildrens] = useState<ReactNode>();
-  const [product, setProduct] = useState<any>();
+  const [content, setContent] = useState<any>();
   return (
     <UIContext.Provider
       value={{
@@ -70,12 +65,8 @@ export const UIProvider = ({ children }: UIProvider) => {
           value: valueSlideOversComponent,
           actions: actionsSlideOversComponent,
         },
-        toggleProductQuickviews: {
-          value: valueProductQuickviews,
-          actions: actionsProductQuickviews,
-        },
         childrenDashboard: { childrens, setChildrens },
-        productView: {product, setProduct}
+        contentArticle: {content, setContent}
       }}
     >
       {children}
@@ -84,5 +75,26 @@ export const UIProvider = ({ children }: UIProvider) => {
 };
 
 export const useUI = () => {
-  return useContext(UIContext);
+  const {
+    toggleSlideOversCarts,
+    toggleMenu,
+    toggleModal,
+    toggleSearch,
+    toggleSlideOversForm,
+    toggleSlideOversFormArticle,
+    toggleSlideOversFormComponent,
+    childrenDashboard,
+    contentArticle
+  } = useContext(UIContext);
+  return {
+    toggleSlideOversCarts,
+    toggleMenu,
+    toggleModal,
+    toggleSearch,
+    toggleSlideOversForm,
+    toggleSlideOversFormArticle,
+    toggleSlideOversFormComponent,
+    childrenDashboard,
+    contentArticle
+  };
 };
