@@ -1,4 +1,4 @@
-// export const revalidate = 10
+export const revalidate = 10
 
 import { ArticleEditor } from '@/src/ui/ArticleEditor'
 import { getArticleById, getArticlesBySiteId } from '@/src/lib/articles'

@@ -1,4 +1,4 @@
-export const dynamic = 'error';
+// export const dynamic = 'error';
 
 import React, { Fragment } from 'react'
 import { getCategoriesByParentId, getCategory, getCategoryById } from '@/src/lib/categories';
