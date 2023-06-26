@@ -171,6 +171,7 @@ export function HeadingDashboard(props: Props) {
     }
     if (article) {
       updateArticle.mutate({ type: 'content', input: { content: contentArticle.content as string, uid: data?.user.sid } })
+      console.log('content', { type: 'content', input: { content: contentArticle.content as string, uid: data?.user.sid } })
     }
 
   };

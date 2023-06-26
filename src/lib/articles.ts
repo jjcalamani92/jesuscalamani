@@ -33,12 +33,12 @@ export const deleteArticles = async (ids: string[]) => {
 
 
 export const updateArticle = async (
-  type: string,
+  typeOperation: string,
   id: string,
   input: UpdateArticleInfo | UpdateArticleThumbnailUrl | UpdateArticleContent
 ) => {
   const res = await fetch(
-    `${url}/api/${v}/${type}/mutation/articles/${id}?typeOperation=${type}`,
+    `${url}/api/${v}/${type}/mutation/articles/${id}?typeOperation=${typeOperation}`,
     {
       method: "POST",
       body: JSON.stringify(input),
